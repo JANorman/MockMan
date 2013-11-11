@@ -14,16 +14,23 @@ You will first need to require the module into your tests.
     var mockman = require('mockman');
 
 #### Defining Assertions
-To create a mock object and define some expectations on the methods that are or are not called, you can define these as follows:
-
+MockMan can currently support generating mocks with the literal pattern, and the constructor pattern so they can be instantiated. Once you've defined which type of mock you would like, the pattern is the same for defining the method call assertions. 
+	
+##### Literal Pattern
     var moduleMock = mockman.literal('SomeModule');
+
+##### Constructor Pattern
+    var moduleMock = mockman.instance('SomeModule');
+
+##### Defining Assertions
 
     // moduleMock::functionName should be called once and return a value
     moduleMock.shouldReceive('functionName').once().willReturn('some_value');
     
     // moduleMock::neverCalledFunction should not be called and return a value
     moduleMock.shouldReceive('neverCalledFunction').never().willReturn('another_value');
-    
+
+
 Once you have defined your expectations, you will then need to generate the mock object which can be passed into your test.
 
     var mock = moduleMock.getMock();
