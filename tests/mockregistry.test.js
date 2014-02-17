@@ -1,5 +1,4 @@
-var assert = require('assert'),
-	mockery = require('mockery');
+var assert = require('assert');
 
 describe('MockRegistry', function() {
 
