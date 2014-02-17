@@ -1,4 +1,4 @@
-#MockMan
+#MockMan [![Build Status](https://travis-ci.org/JANorman/MockMan.png?branch=master)](https://travis-ci.org/JANorman/MockMan)
 
 MockMan is a Node.js module that lets you easily create mocks, stubs and spies for use in testing your node application. 
 
