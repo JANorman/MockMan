@@ -30,7 +30,27 @@ MockMan can currently support generating mocks with the literal pattern, and the
     // moduleMock::neverCalledFunction should not be called and return a value
     moduleMock.shouldReceive('neverCalledFunction').never().willReturn('another_value');
 
+##### Testing callbacks
+If you make use of callbacks, it is quite often useful to simulate different callback return values in your tests. Consider the following callback pattern:
 
+    Users.fetchAll(function(err, result) {
+        if(err) {
+            return false;
+        }
+
+        return result;
+    }); 
+
+To test this callback, you can use the "willExecuteCallback" method to control how the callback is executed. This method takes two parameters; the first is the argument number (zero-indexed) where the closure is, and the second is an array of parameters that should be passed to the closure. The following are examples of how you could test the above code:
+    
+    // Simulates a successful call of fetch
+    UsersMock.shouldReceive('fetchAll').once().willExecuteCallback(0, [null, ['user1', 'user2', 'user3']]);
+
+    // Simulates an unsuccessful fetch
+    UsersMock.shouldReceive('fetchAll').once().willExecuteCallback(0, ['an error message', [null]);
+
+
+#### Using the mock objects
 Once you have defined your expectations, you will then need to generate the mock object which can be passed into your test.
 
     var mock = moduleMock.getMock();
