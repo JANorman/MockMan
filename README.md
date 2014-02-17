@@ -47,7 +47,7 @@ To test this callback, you can use the "willExecuteCallback" method to control h
     UsersMock.shouldReceive('fetchAll').once().willExecuteCallback(0, [null, ['user1', 'user2', 'user3']]);
 
     // Simulates an unsuccessful fetch
-    UsersMock.shouldReceive('fetchAll').once().willExecuteCallback(0, ['an error message', [null]);
+    UsersMock.shouldReceive('fetchAll').once().willExecuteCallback(0, ['an error message', null]);
 
 
 #### Using the mock objects
