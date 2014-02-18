@@ -1,10 +1,12 @@
-var assert = require('assert');
+var assert = require('assert'),
+	_ = require('underscore');
 
 describe('MockRegistry', function() {
 
 	var registry;
 	beforeEach(function(done) {
 		registry = require('../lib/mockregistry');
+		registry.clearMocks();
 		done();
 	});
 
@@ -31,6 +33,21 @@ describe('MockRegistry', function() {
 				Mock3: mock3
 			};
 			assert.deepEqual(expected, mocks);
+			done();
+		});
+
+	});
+
+	describe('ClearMocks', function() {
+
+		it('should correctly clear mocks', function(done) {
+			var mock1 = { mockname: 'mock1' };
+			registry.addMock('Mock1', mock1);
+
+			assert.equal(1, _.keys(registry.getMocks()).length);
+
+			registry.clearMocks();
+			assert.equal(0, _.keys(registry.getMocks()).length);
 			done();
 		});
 
