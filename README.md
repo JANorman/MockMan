@@ -6,7 +6,7 @@ MockMan is a Node.js module that lets you easily create mocks, stubs and spies f
 _Instructions coming soon_
 
 ## Usage
-MockMan provides a simple interface for creating mock objets, which can then be injected into your tests.
+MockMan provides a simple interface for creating mock objects, which can then be injected into your tests.
 
 #### Setup
 You will first need to require the module into your tests.
@@ -60,3 +60,5 @@ To keep MockMan test suite agnostic, you must call the close method, which will 
 
     mockman.close();
 
+## Licensing
+MockMan is licensed under the MIT license. Details can be found in the LICENSE file. 
