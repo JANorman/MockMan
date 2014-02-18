@@ -33,7 +33,15 @@ describe('MockRegistry', function() {
 			assert.deepEqual(expected, mocks);
 			done();
 		});
-
+    
+        it('should clear all mocks when called', function(done){
+			var mock1 = { mockname: 'mock1' };
+			registry.addMock('Mock1', mock1);
+            registry.clearMocks();
+			var mocks = registry.getMocks();
+			assert.deepEqual([], mocks);
+			done();
+        });
 	});
 
 });
