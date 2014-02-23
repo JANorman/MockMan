@@ -56,7 +56,7 @@ Once you have defined your expectations, you will then need to generate the mock
     var mock = moduleMock.getMock();
 
 #### Checking Assertions
-To keep MockMan test suite agnostic, you must call the close method, which will evaluate each of the assertions made. Should this come across an error, for example a method called an unexpected number of times, it will trow an exception. It is recommended that you make this call in your tear down of each test. 
+To keep MockMan test suite agnostic, you must call the close method, which will evaluate each of the assertions made. Should this come across an error, for example a method called an unexpected number of times, it will throw an exception. It is recommended that you make this call in your tear down of each test. 
 
     mockman.close();
 
