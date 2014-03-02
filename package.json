@@ -1,7 +1,7 @@
 {
-  "name": "MockMan",
+  "name": "mockman",
   "version": "0.5.0",
-  "description": "MockMan is a Node.js library to help create test mocks, spies and stubs.",
+  "description": "MockMan is a simple library to help create test mocks and stubs.",
   "main": "index.js",
   "scripts": {
     "test": "node_modules/.bin/mocha --recursive tests/"
@@ -13,12 +13,11 @@
   "keywords": [
     "testing",
     "mocks",
-    "spies",
     "stubs",
     "mocking"
   ],
   "author": "James Norman",
-  "license": "Apache",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/JANorman/MockMan/issues"
   },
