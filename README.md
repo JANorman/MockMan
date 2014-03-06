@@ -3,7 +3,14 @@
 MockMan is a Node.js module that lets you easily create mocks, stubs and spies for use in testing your node application. 
 
 ## Installation
-_Instructions coming soon_
+MockMan is available through NPM. To install, add it to your package.json as follows:
+    "dependencies": {
+        "mockman" : "*",
+    }
+
+Alternatively you can install it using the NPM CLI:
+    npm install mockman
+    
 
 ## Usage
 MockMan provides a simple interface for creating mock objects, which can then be injected into your tests.
