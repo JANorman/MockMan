@@ -10,7 +10,7 @@ MockMan is available through NPM. To install, add it to your package.json as fol
 
 Alternatively you can install it using the NPM CLI:
     npm install mockman
-    
+
 
 ## Usage
 MockMan provides a simple interface for creating mock objects, which can then be injected into your tests.
@@ -36,6 +36,21 @@ MockMan can currently support generating mocks with the literal pattern, and the
     
     // moduleMock::neverCalledFunction should not be called and return a value
     moduleMock.shouldReceive('neverCalledFunction').never().willReturn('another_value');
+
+
+##### Method call counts
+To define method call counts, a number of methods are available:
+- any()
+    - The method can be called any amount of times (0 or more)
+- once()
+    - The method should only be called once
+- twice()
+    - The method should only be twice
+- times(x)
+    - The method should be called the specific number of times defined
+- never()
+    - The method should never be called
+
 
 ##### Testing callbacks
 If you make use of callbacks, it is quite often useful to simulate different callback return values in your tests. Consider the following callback pattern:
